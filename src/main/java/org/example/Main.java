@@ -4,7 +4,13 @@ import java.util.*;
 
 class shape {
     int stype;
-    double a, p, l, b, s1, s2, r;
+    double a;
+    double p;
+    double l;
+    double b;
+    double s1;
+    double s2;
+    double r;
     double pi = 3.14;
 
     public shape(int type, double length, double breadth, double side1, double side2, double radius) {
