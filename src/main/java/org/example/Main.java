@@ -1,8 +1,8 @@
 package org.example;
-
+import java.util.logging.*;
 import java.util.*;
 
-class shape {
+class Shape {
     int stype;
     double a;
     double p;
@@ -13,7 +13,7 @@ class shape {
     double r;
     double pi = 3.14;
 
-    public shape(int type, double length, double breadth, double side1, double side2, double radius) {
+    public Shape(int type, double length, double breadth, double side1, double side2, double radius) {
         stype = type;
         l = length;
         b = breadth;
@@ -49,25 +49,27 @@ class shape {
     }
 
     public static void main(String[] args) {
+        static Logger l=Logger.getLogger("com.api.jar");
+
         Scanner s = new Scanner(System.in);
-        System.out.println("Enter the length:");
+        l.info("Enter the length:");
         double length = s.nextFloat();
-        System.out.println("Enter the breadth:");
+        l.info("Enter the breadth:");
         double breadth = s.nextFloat();
-        System.out.println("Enter the side1:");
+        l.info("Enter the side1:");
         double side1 = s.nextFloat();
-        System.out.println("Enter the side2:");
+        l.info("Enter the side2:");
         double side2 = s.nextFloat();
-        System.out.println("Enter the radius:");
+        l.info("Enter the radius:");
         double radius = s.nextFloat();
 
-        System.out.println("choose one from below.");
-        System.out.println("1.Rectangle\n2.Triangle\n3.Circle");
-        System.out.println("Enter the shape type:");
+        l.info("choose one from below.");
+        l.info("1.Rectangle\n2.Triangle\n3.Circle");
+        l.info("Enter the shape type:");
         int type = s.nextInt();
-        shape sh = new shape(type, length, breadth, side1, side2, radius);
-        System.out.println("The perimeter of the given shape is:" + sh.perimeter());
-        System.out.println("The area of the given shape is:" + sh.area());
+        Shape sh = new Shape(type, length, breadth, side1, side2, radius);
+        l.log(Level.INFO, () -> "The perimeter of the given shape is:" +sh.perimeter());
+        l.log(Level.INFO, () -> "The area of the given shape is:" +sh.area());
         s.close();
     }
 
