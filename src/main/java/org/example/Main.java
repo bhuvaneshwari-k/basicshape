@@ -49,7 +49,7 @@ class Shape {
     }
 
     public static void main(String[] args) {
-        static Logger l=Logger.getLogger("com.api.jar");
+        static Logger l=Logger.getLogger("welcome");
 
         Scanner s = new Scanner(System.in);
         l.info("Enter the length:");
